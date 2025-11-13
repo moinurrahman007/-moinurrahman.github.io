@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About | M. Moin-Ur-Rahman</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav>
+    <div class="logo">M<span>MR</span></div>
+    <div class="nav-toggle">☰</div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="experience.html">Experience</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-wrapper">
+    <section class="section-card">
+      <h1 class="section-heading">About Me</h1>
+      <p class="section-sub">
+        I am a Business Systems Analyst with a background in Electronics & Communications Engineering.
+        I have experience across business analysis, engineering operations, and product growth roles in
+        fast-moving technology environments.
+      </p>
+      <p class="section-sub" style="margin-top: 10px;">
+        My work focuses on translating complex business requirements into clear, implementable technical
+        solutions. I enjoy collaborating with cross-functional teams, improving processes, and building
+        systems that scale across countries and users.
+      </p>
+
+      <div class="tag-row" style="margin-top: 16px;">
+        <span class="tag">Business Analysis</span>
+        <span class="tag">API Integration</span>
+        <span class="tag">ERP & CBS Support</span>
+        <span class="tag">SQL · JQL · Postman</span>
+        <span class="tag">Agile & Scrum</span>
+        <span class="tag">JIRA</span>
+      </div>
+    </section>
+
+    <section class="section-card">
+      <h2 class="section-heading">Interests</h2>
+      <p class="section-sub">A few areas that I actively explore and enjoy working on:</p>
+      <ul class="item-body" style="margin-top: 8px;">
+        <li>Designing and improving business processes for digital products</li>
+        <li>Working with APIs and data to support decision-making</li>
+        <li>Using diagrams, flows, and documentation to align teams</li>
+        <li>Learning more about AI-driven automation in operations</li>
+        <li>Creative work in photography, media, and storytelling</li>
+      </ul>
+    </section>
+  </div>
+
+  <footer>
+    © <span id="year"></span> M. Moin-Ur-Rahman
+  </footer>
+
+  <script src="main.js"></script>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
