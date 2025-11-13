@@ -176,3 +176,38 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 })();
+/* ========= Scroll Reveal for cards (section, experience, projects, contact) ========= */
+(function () {
+  const SELECTORS = ".section-card, .item-card, .project-card, .contact-card";
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const elements = Array.from(document.querySelectorAll(SELECTORS));
+
+    if (!elements.length) return;
+
+    // If browser doesn't support IntersectionObserver, just show everything
+    if (!("IntersectionObserver" in window)) {
+      elements.forEach((el) => el.classList.add("reveal-visible"));
+      return;
+    }
+
+    // Start hidden with .reveal, then add .reveal-visible when in view
+    elements.forEach((el) => el.classList.add("reveal"));
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("reveal-visible");
+            observer.unobserve(entry.target); // animate only once
+          }
+        });
+      },
+      {
+        threshold: 0.15, // how much of the element should be visible before animation
+      }
+    );
+
+    elements.forEach((el) => observer.observe(el));
+  });
+})();
