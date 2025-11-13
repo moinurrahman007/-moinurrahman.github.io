@@ -1,25 +1,66 @@
-/* ========= Mobile nav toggle ========= */
+/* ========= Basic setup: mobile nav + year ========= */
 document.addEventListener("DOMContentLoaded", () => {
   const toggle = document.querySelector(".nav-toggle");
   const navList = document.querySelector("nav ul");
   if (toggle && navList) {
-    toggle.addEventListener("click", () => navList.classList.toggle("open"));
+    toggle.addEventListener("click", () => {
+      navList.classList.toggle("open");
+    });
   }
-  const y = document.getElementById("year");
-  if (y) y.textContent = new Date().getFullYear();
+
+  const yearEl = document.getElementById("year");
+  if (yearEl) {
+    yearEl.textContent = new Date().getFullYear();
+  }
+
+  /* ========= Scroll Reveal ========= */
+  const SELECTORS =
+    ".section-card, .item-card, .project-card, .contact-card, .timeline";
+
+  const elements = Array.from(document.querySelectorAll(SELECTORS));
+
+  if (!elements.length) return;
+
+  // If IntersectionObserver not supported, show everything
+  if (!("IntersectionObserver" in window)) {
+    elements.forEach((el) => el.classList.add("reveal-visible"));
+    return;
+  }
+
+  elements.forEach((el) => el.classList.add("reveal"));
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("reveal-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      threshold: 0.15,
+    }
+  );
+
+  elements.forEach((el) => observer.observe(el));
 });
 
 /* ========= Typed role effect (Home only) ========= */
 (function () {
   const el = document.getElementById("typed-role");
   if (!el) return;
+
   const roles = [
     "Business Systems Analyst",
-    "Business Analyst"
-    "Operations Analyst",
+    "Engineering Operations Analyst",
     "Product & Growth Analyst",
+    "API & Integration Enthusiast",
   ];
-  let roleIndex = 0, charIndex = 0, typing = true;
+
+  let roleIndex = 0;
+  let charIndex = 0;
+  let typing = true;
 
   function tick() {
     const text = roles[roleIndex];
@@ -39,34 +80,34 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     setTimeout(tick, typing ? 85 : 55);
   }
+
   tick();
 })();
 
-/* ========= 3D Floating Particles (Depth Field) =========
-   - Lightweight, no dependencies
-   - Honors prefers-reduced-motion
-   - Pauses when tab is hidden
-*/
+/* ========= 3D Floating Particles (for pages with #bg-canvas) ========= */
 (function () {
   const canvas = document.getElementById("bg-canvas");
   if (!canvas) return;
-  const ctx = canvas.getContext("2d");
 
-  // config
+  const ctx = canvas.getContext("2d");
   const DPR = Math.min(window.devicePixelRatio || 1, 2);
-  const PARTICLE_COUNT = 180;       // adjust if needed
-  const FIELD_DEPTH = 1200;         // virtual z-depth
-  const SPEED = 0.6;                // forward speed
-  const BASE_SIZE = 2.2;            // base point size
-  const FOCAL_LENGTH = 420;         // perspective scale
+  const PARTICLE_COUNT = 180;
+  const FIELD_DEPTH = 1200;
+  const SPEED = 0.6;
+  const BASE_SIZE = 2.2;
+  const FOCAL_LENGTH = 420;
   const COLOR_NEAR = [210, 230, 255];
   const COLOR_FAR = [120, 140, 200];
 
-  let width, height, cx, cy, running = true;
+  let width, height, cx, cy;
   let particles = [];
-  let pointerX = 0, pointerY = 0;   // gentle parallax
+  let pointerX = 0;
+  let pointerY = 0;
+  let running = true;
 
-  const reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const reduceMotion =
+    window.matchMedia &&
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   function resize() {
     width = canvas.clientWidth;
@@ -78,12 +119,16 @@ document.addEventListener("DOMContentLoaded", () => {
     cy = height / 2;
   }
 
-  function rand(min, max) { return Math.random() * (max - min) + min; }
+  function rand(min, max) {
+    return Math.random() * (max - min) + min;
+  }
 
   function resetParticle(p, far = false) {
     p.x = rand(-cx * 1.5, cx * 1.5);
     p.y = rand(-cy * 1.5, cy * 1.5);
-    p.z = far ? rand(FIELD_DEPTH * 0.5, FIELD_DEPTH) : rand(FOCAL_LENGTH * 0.6, FIELD_DEPTH);
+    p.z = far
+      ? rand(FIELD_DEPTH * 0.5, FIELD_DEPTH)
+      : rand(FOCAL_LENGTH * 0.6, FIELD_DEPTH);
   }
 
   function create() {
@@ -94,10 +139,11 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  function lerp(a, b, t) { return a + (b - a) * t; }
+  function lerp(a, b, t) {
+    return a + (b - a) * t;
+  }
 
-  function draw() {
-    if (!running) return;
+  function drawFrame() {
     ctx.clearRect(0, 0, width, height);
 
     for (let i = 0; i < particles.length; i++) {
@@ -105,26 +151,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // Move forward in Z space
       p.z -= SPEED;
-      if (p.z < 1) resetParticle(p, true);
+      if (p.z < 1) {
+        resetParticle(p, true);
+      }
 
-      // Gentle parallax from pointer
       const ox = (pointerX - cx) * 0.02;
       const oy = (pointerY - cy) * 0.02;
 
-      // Perspective projection
       const scale = FOCAL_LENGTH / (p.z + FOCAL_LENGTH);
       const x2d = (p.x + ox) * scale + cx;
       const y2d = (p.y + oy) * scale + cy;
 
-      // If off-screen, recycle
-      if (x2d < -50 || x2d > width + 50 || y2d < -50 || y2d > height + 50) {
+      if (
+        x2d < -50 ||
+        x2d > width + 50 ||
+        y2d < -50 ||
+        y2d > height + 50
+      ) {
         resetParticle(p, false);
         continue;
       }
 
-      // Size and alpha by depth
       const size = BASE_SIZE * scale * 1.2;
-      const depthT = Math.min(1, Math.max(0, 1 - p.z / FIELD_DEPTH)); // near -> 1
+      const depthT = Math.min(1, Math.max(0, 1 - p.z / FIELD_DEPTH));
       const r = Math.round(lerp(COLOR_FAR[0], COLOR_NEAR[0], depthT));
       const g = Math.round(lerp(COLOR_FAR[1], COLOR_NEAR[1], depthT));
       const b = Math.round(lerp(COLOR_FAR[2], COLOR_NEAR[2], depthT));
@@ -138,11 +187,14 @@ document.addEventListener("DOMContentLoaded", () => {
       ctx.fill();
       ctx.shadowBlur = 0;
     }
-
-    requestAnimationFrame(draw);
   }
 
-  // Pointer parallax (gentle)
+  function loop() {
+    if (!running) return;
+    drawFrame();
+    requestAnimationFrame(loop);
+  }
+
   function onPointerMove(e) {
     if (reduceMotion) return;
     const t = e.touches ? e.touches[0] : e;
@@ -150,10 +202,11 @@ document.addEventListener("DOMContentLoaded", () => {
     pointerY = t.clientY;
   }
 
-  // Pause when page hidden (battery friendly)
-  document.addEventListener("visibilitychange", () => { running = !document.hidden; if (running) draw(); });
+  document.addEventListener("visibilitychange", () => {
+    running = !document.hidden;
+    if (running) requestAnimationFrame(loop);
+  });
 
-  // Initialize
   resize();
   create();
 
@@ -161,53 +214,177 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener("resize", resize);
     window.addEventListener("mousemove", onPointerMove, { passive: true });
     window.addEventListener("touchmove", onPointerMove, { passive: true });
-    requestAnimationFrame(draw);
+    requestAnimationFrame(loop);
   } else {
-    // If reduced motion, draw a static frame
-    ctx.clearRect(0, 0, width, height);
-    particles.forEach(p => {
-      const scale = FOCAL_LENGTH / (p.z + FOCAL_LENGTH);
-      const x2d = p.x * scale + cx;
-      const y2d = p.y * scale + cy;
-      ctx.beginPath();
-      ctx.fillStyle = "rgba(200,210,255,0.45)";
-      ctx.arc(x2d, y2d, BASE_SIZE * scale, 0, Math.PI * 2);
-      ctx.fill();
-    });
+    // Static frame for reduced motion
+    drawFrame();
   }
 })();
-/* ========= Scroll Reveal for cards (section, experience, projects, contact) ========= */
+
+/* ========= 3D Neon Sphere (homepage only, for #sphere-canvas) ========= */
 (function () {
-  const SELECTORS = ".section-card, .item-card, .project-card, .contact-card";
+  const canvas = document.getElementById("sphere-canvas");
+  if (!canvas) return;
 
-  document.addEventListener("DOMContentLoaded", () => {
-    const elements = Array.from(document.querySelectorAll(SELECTORS));
+  const ctx = canvas.getContext("2d");
+  const DPR = Math.min(window.devicePixelRatio || 1, 2);
+  const reduceMotion =
+    window.matchMedia &&
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-    if (!elements.length) return;
+  let width, height, cx, cy;
+  let orbs = [];
+  const ORB_COUNT = 110;
+  const SPHERE_RADIUS_BASE = 140;
+  const ROTATION_SPEED = 0.004;
+  let rotation = 0;
+  let running = true;
 
-    // If browser doesn't support IntersectionObserver, just show everything
-    if (!("IntersectionObserver" in window)) {
-      elements.forEach((el) => el.classList.add("reveal-visible"));
-      return;
+  function resize() {
+    width = canvas.clientWidth;
+    height = canvas.clientHeight;
+    canvas.width = Math.floor(width * DPR);
+    canvas.height = Math.floor(height * DPR);
+    ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+    cx = width / 2;
+    cy = height / 2;
+  }
+
+  function createOrbs() {
+    orbs = [];
+    for (let i = 0; i < ORB_COUNT; i++) {
+      const phi = Math.acos(2 * Math.random() - 1);
+      const theta = 2 * Math.PI * Math.random();
+      const radiusFactor = 0.6 + Math.random() * 0.4;
+
+      orbs.push({
+        phi,
+        theta,
+        radiusFactor,
+        speed: 0.0015 + Math.random() * 0.0025,
+      });
     }
+  }
 
-    // Start hidden with .reveal, then add .reveal-visible when in view
-    elements.forEach((el) => el.classList.add("reveal"));
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("reveal-visible");
-            observer.unobserve(entry.target); // animate only once
-          }
-        });
-      },
-      {
-        threshold: 0.15, // how much of the element should be visible before animation
-      }
+  function drawSphereCore() {
+    const r = SPHERE_RADIUS_BASE * 1.05;
+    const gradient = ctx.createRadialGradient(
+      cx - r * 0.3,
+      cy - r * 0.4,
+      r * 0.1,
+      cx,
+      cy,
+      r * 1.15
     );
+    gradient.addColorStop(0, "rgba(248, 250, 252, 0.9)");
+    gradient.addColorStop(0.3, "rgba(59, 130, 246, 0.85)");
+    gradient.addColorStop(0.65, "rgba(168, 85, 247, 0.3)");
+    gradient.addColorStop(1, "rgba(15, 23, 42, 0.0)");
 
-    elements.forEach((el) => observer.observe(el));
+    ctx.beginPath();
+    ctx.fillStyle = gradient;
+    ctx.arc(cx, cy, r, 0, Math.PI * 2);
+    ctx.fill();
+
+    ctx.beginPath();
+    ctx.strokeStyle = "rgba(129, 140, 248, 0.9)";
+    ctx.lineWidth = 1.3;
+    ctx.shadowColor = "rgba(129, 140, 248, 0.9)";
+    ctx.shadowBlur = 12;
+    ctx.arc(cx, cy, r * 1.05, 0, Math.PI * 2);
+    ctx.stroke();
+    ctx.shadowBlur = 0;
+  }
+
+  function drawOrbs() {
+    for (let i = 0; i < orbs.length; i++) {
+      const o = orbs[i];
+      o.theta += o.speed;
+      const phi = o.phi;
+      const theta = o.theta + rotation;
+
+      const r = SPHERE_RADIUS_BASE * o.radiusFactor;
+
+      const x3d = r * Math.sin(phi) * Math.cos(theta);
+      const y3d = r * Math.cos(phi);
+      const z3d = r * Math.sin(phi) * Math.sin(theta);
+
+      const perspective = 0.8 + z3d / (SPHERE_RADIUS_BASE * 2);
+      const x2d = cx + x3d * perspective;
+      const y2d = cy + y3d * 0.55 * perspective;
+
+      const depth = (z3d + SPHERE_RADIUS_BASE) / (SPHERE_RADIUS_BASE * 2);
+      const size = 2 + depth * 2.2;
+
+      const rCol = Math.round(120 + depth * 120);
+      const gCol = Math.round(180 + depth * 50);
+      const bCol = Math.round(255);
+
+      const alpha = 0.25 + depth * 0.6;
+
+      ctx.beginPath();
+      ctx.fillStyle = `rgba(${rCol},${gCol},${bCol},${alpha})`;
+      ctx.shadowColor = `rgba(${rCol},${gCol},${bCol},${Math.min(
+        0.9,
+        alpha + 0.1
+      )})`;
+      ctx.shadowBlur = 6 + depth * 10;
+      ctx.arc(x2d, y2d, size, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.shadowBlur = 0;
+    }
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, width, height);
+
+    const bgGradient = ctx.createRadialGradient(
+      cx,
+      cy,
+      Math.min(width, height) * 0.1,
+      cx,
+      cy,
+      Math.max(width, height) * 0.9
+    );
+    bgGradient.addColorStop(0, "rgba(15, 23, 42, 0.0)");
+    bgGradient.addColorStop(1, "rgba(3, 7, 18, 0.85)");
+    ctx.fillStyle = bgGradient;
+    ctx.fillRect(0, 0, width, height);
+
+    drawSphereCore();
+    drawOrbs();
+
+    rotation += ROTATION_SPEED;
+  }
+
+  function loop() {
+    if (!running) return;
+    draw();
+    requestAnimationFrame(loop);
+  }
+
+  document.addEventListener("visibilitychange", () => {
+    running = !document.hidden;
+    if (running) requestAnimationFrame(loop);
   });
+
+  function onPointerMove(e) {
+    const t = e.touches ? e.touches[0] : e;
+    const normX = (t.clientX / width - 0.5) * 2;
+    const normY = (t.clientY / height - 0.5) * 2;
+    cx = width / 2 + normX * 20;
+    cy = height / 2 + normY * 14;
+  }
+
+  resize();
+  createOrbs();
+
+  if (!reduceMotion) {
+    window.addEventListener("resize", resize);
+    window.addEventListener("mousemove", onPointerMove, { passive: true });
+    window.addEventListener("touchmove", onPointerMove, { passive: true });
+    requestAnimationFrame(loop);
+  } else {
+    drawSphereCore();
+  }
 })();
