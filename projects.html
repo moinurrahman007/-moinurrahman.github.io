@@ -2,14 +2,18 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Projects | M. Moin-Ur-Rahman</title>
+  <meta name="description" content="Selected projects by M. Moin-Ur-Rahman including BRAC Data Service Portal, DFA SDLC V2, AI-based Traffic Control, and Creative Direction." />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <!-- 3D particles canvas -->
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
+
   <nav>
     <div class="logo">M<span>R</span></div>
-    <div class="nav-toggle">☰</div>
+    <button class="nav-toggle" aria-label="Open menu">☰</button>
     <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
@@ -19,69 +23,221 @@
     </ul>
   </nav>
 
-  <div class="page-wrapper">
+  <main class="page-wrapper">
     <section class="section-card">
       <h1 class="section-heading">Selected Projects</h1>
       <p class="section-sub">
-        A few representative projects that reflect my interest in systems, data, and creative work.
+        A snapshot of work that reflects my interest in systems, data, digital operations, and creative storytelling.
       </p>
     </section>
 
     <section class="project-grid">
-      <article class="project-card">
+
+      <!-- Project 1: BRAC Data Service Portal -->
+      <article class="project-card fade-in-left">
+        <!-- Optional image: upload brac-portal-1.png then update the src below -->
+        <figure class="project-shot main-shot">
+          <img src="brac-portal-1.png" alt="BRAC Data Service Portal overview (placeholder)" />
+          <figcaption>Example view of the BRAC Data Service Portal (replace with your own screenshot).</figcaption>
+        </figure>
+
         <h2 class="project-title">BRAC Data Service Portal</h2>
-        <p class="project-meta">Role: Solution Designer & Business Analyst</p>
+        <p class="project-meta">Role: Solution Designer & Business Analyst · BRAC IT Services</p>
         <p class="project-desc">
-          Designed a portal to separate data tickets from service tickets, reducing data inconsistencies and
-          improving operational support for internal stakeholders. The solution targeted recurring human-generated
-          errors and raised visibility on data-related issues.
+          Designed a portal to separate data tickets from service tickets, reducing inconsistencies and improving
+          support for internal stakeholders. The solution focuses on visibility, structured routing, and cleaner
+          data flows across teams.
         </p>
+
         <div class="tag-row">
           <span class="tag">Business Analysis</span>
           <span class="tag">Process Design</span>
           <span class="tag">Ticketing</span>
+          <span class="tag">Operations</span>
+        </div>
+
+        <!-- View My Work block -->
+        <div class="project-detail">
+          <h3>View my work</h3>
+          <p>
+            Below is how I contributed to the portal — from understanding the problem to designing the flows,
+            ticket types, and documentation used by the teams.
+          </p>
+
+          <div class="project-gallery">
+            <!-- Add / update images as you have them -->
+            <!-- Example: upload brac-portal-flow.png and brac-portal-ui.png -->
+            <figure class="project-shot">
+              <img src="brac-portal-flow.png" alt="High-level process flow for Data Service Portal" />
+              <figcaption>High-level process flow separating data tickets from service tickets.</figcaption>
+            </figure>
+
+            <figure class="project-shot">
+              <img src="brac-portal-ui.png" alt="Ticket view sample for Data Service Portal" />
+              <figcaption>Sample ticket view and filtering concept for different ticket categories.</figcaption>
+            </figure>
+          </div>
+
+          <ul class="project-points">
+            <li><strong>My role:</strong> Gathered requirements from operations & support teams and translated them into structured flows and ticket types.</li>
+            <li><strong>What I did:</strong> Mapped current vs. target processes, defined data ticket categories, and wrote functional specifications for the portal.</li>
+            <li><strong>Outcome:</strong> Reduced confusion between service vs. data issues and improved tracking of recurring data-related errors.</li>
+          </ul>
         </div>
       </article>
 
-      <article class="project-card">
-        <h2 class="project-title">AI-Based Automated Traffic Control System</h2>
-        <p class="project-meta">Academic Project · Traffic & Smart Cities</p>
+      <!-- Project 2: DFA SDLC V2 -->
+      <article class="project-card fade-in-right">
+        <!-- Optional image: upload dfa-sdlc-v2.png then update src -->
+        <figure class="project-shot main-shot">
+          <img src="dfa-sdlc-v2.png" alt="DFA SDLC V2 process overview (placeholder)" />
+          <figcaption>DFA SDLC V2 – improved lifecycle for Digital Field Application (placeholder image).</figcaption>
+        </figure>
+
+        <h2 class="project-title">DFA SDLC V2</h2>
+        <p class="project-meta">Role: Process Designer / Analyst · Digital Field Application</p>
         <p class="project-desc">
-          Developed an AI-based traffic control system tailored to the challenges of Bangladesh’s urban roads,
-          with the aim of prioritizing congested lanes in real time. Focused on adapting smart-city concepts
-          to local infrastructure constraints.
+          Worked on refining the software development life cycle (SDLC) for the Digital Field Application (DFA),
+          aligning requirements, development, testing, and deployment activities into a clearer, more predictable
+          workflow.
         </p>
+
+        <div class="tag-row">
+          <span class="tag">SDLC</span>
+          <span class="tag">Process Improvement</span>
+          <span class="tag">Digital Field App</span>
+          <span class="tag">Change Management</span>
+        </div>
+
+        <div class="project-detail">
+          <h3>View my work</h3>
+          <p>
+            This section is designed so you can visually show how DFA SDLC V2 works — diagrams, stages,
+            and your contribution at each step.
+          </p>
+
+          <div class="project-gallery">
+            <!-- Replace these placeholder files with your actual uploaded images -->
+            <figure class="project-shot">
+              <img src="dfa-sdlc-stages.png" alt="DFA SDLC V2 stages diagram" />
+              <figcaption>Stages of the DFA SDLC V2, from requirement intake to production release.</figcaption>
+            </figure>
+
+            <figure class="project-shot">
+              <img src="dfa-sdlc-board.png" alt="Sample JIRA / tracking board for DFA SDLC V2" />
+              <figcaption>Example JIRA / tracking board structure used in DFA SDLC V2 (placeholder).</figcaption>
+            </figure>
+          </div>
+
+          <ul class="project-points">
+            <li><strong>My role:</strong> Helped define and document the updated SDLC tailored for DFA workstreams.</li>
+            <li><strong>What I did:</strong> Captured current gaps, proposed a V2 flow, and created diagrams & documentation for JIRA workflows, approvals, and UAT.</li>
+            <li><strong>Outcome:</strong> Provided a clearer view of work stages, responsibilities, and deployment confidence for DFA-related changes.</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- Project 3: AI-Based Automated Traffic Control -->
+      <article class="project-card fade-in-left">
+        <!-- Optional image: upload traffic-ai.png -->
+        <figure class="project-shot main-shot">
+          <img src="traffic-ai.png" alt="AI-based traffic simulation screenshot (placeholder)" />
+          <figcaption>Conceptual view of AI-based traffic control tailored to local conditions.</figcaption>
+        </figure>
+
+        <h2 class="project-title">AI-Based Automated Traffic Control</h2>
+        <p class="project-meta">Academic · Smart Cities & AI</p>
+        <p class="project-desc">
+          Developed an AI-based traffic control concept for Bangladesh’s urban roads, focusing on dynamically
+          prioritizing congested lanes and adapting signal timing to real conditions.
+        </p>
+
         <div class="tag-row">
           <span class="tag">Artificial Intelligence</span>
           <span class="tag">Smart Traffic</span>
           <span class="tag">Simulation</span>
         </div>
+
+        <div class="project-detail">
+          <h3>View my work</h3>
+          <p>
+            Use this section to show any diagrams, simulation screenshots, or logic you implemented for the AI model.
+          </p>
+
+          <div class="project-gallery">
+            <figure class="project-shot">
+              <img src="traffic-flow-diagram.png" alt="Traffic flow diagram using AI" />
+              <figcaption>High-level traffic flow diagram showing how prioritization logic works.</figcaption>
+            </figure>
+
+            <figure class="project-shot">
+              <img src="traffic-sim-screen.png" alt="Traffic simulation screenshot" />
+              <figcaption>Simulation screenshot illustrating lane prioritization and signal adjustments.</figcaption>
+            </figure>
+          </div>
+
+          <ul class="project-points">
+            <li><strong>My role:</strong> Designed the concept, parameters, and decision logic for AI-driven signal control.</li>
+            <li><strong>What I did:</strong> Modeled lane congestion inputs and signal timing responses in a controlled simulation environment.</li>
+            <li><strong>Outcome:</strong> Demonstrated how smarter signal logic can reduce waiting time on high-load lanes in urban settings.</li>
+          </ul>
+        </div>
       </article>
 
-      <article class="project-card">
-        <h2 class="project-title">Creative Direction – Bangladesh Films & Media</h2>
+      <!-- Project 4: Creative Direction -->
+      <article class="project-card fade-in-right">
+        <!-- Optional image: upload films-media-shot.png -->
+        <figure class="project-shot main-shot">
+          <img src="films-media-shot.png" alt="Bangladesh Films & Media frame (placeholder)" />
+          <figcaption>Sample frame from creative projects at Bangladesh Films & Media (placeholder).</figcaption>
+        </figure>
+
+        <h2 class="project-title">Creative Direction — Bangladesh Films & Media</h2>
         <p class="project-meta">Director of Photography & Assistant Director</p>
         <p class="project-desc">
-          Contributed to screenplay direction, script writing, and cinematography. Supported production teams
-          in delivering visually compelling and story-driven media projects, combining technical precision with
-          creative vision.
+          Contributed to screenplay direction, scriptwriting, and cinematography. Supported production teams in
+          delivering visually compelling and story-driven media projects.
         </p>
+
         <div class="tag-row">
           <span class="tag">Photography</span>
           <span class="tag">Cinematography</span>
           <span class="tag">Storytelling</span>
         </div>
+
+        <div class="project-detail">
+          <h3>View my work</h3>
+          <p>
+            Show stills from your shoots, behind-the-scenes frames, or key frames that reflect your visual style.
+          </p>
+
+          <div class="project-gallery">
+            <figure class="project-shot">
+              <img src="films-frame-1.jpg" alt="Cinematography still 1" />
+              <figcaption>A still showcasing framing, lighting, and storytelling through visuals.</figcaption>
+            </figure>
+
+            <figure class="project-shot">
+              <img src="films-frame-2.jpg" alt="Cinematography still 2" />
+              <figcaption>Another frame focusing on mood, composition, and emotion.</figcaption>
+            </figure>
+          </div>
+
+          <ul class="project-points">
+            <li><strong>My role:</strong> Directed shots, worked on visual framing, and assisted in coordinating production sets.</li>
+            <li><strong>What I did:</strong> Supported script refinement, shot planning, and camera work to achieve the desired narrative.</li>
+            <li><strong>Outcome:</strong> Helped deliver polished video content with a consistent visual language and story flow.</li>
+          </ul>
+        </div>
       </article>
+
     </section>
-  </div>
+  </main>
 
   <footer>
     © <span id="year"></span> M. Moin-Ur-Rahman
   </footer>
 
   <script src="main.js"></script>
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>
