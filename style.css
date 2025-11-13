@@ -708,3 +708,13 @@ body {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
+/* ===== 3D Tilt Card Effect ===== */
+.tilt-card {
+  transform-style: preserve-3d;
+  transition: transform 0.1s ease-out;
+  perspective: 1000px;
+}
+
+.tilt-card > * {
+  transform: translateZ(40px);
+}
