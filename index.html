@@ -4,16 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>M. Moin-Ur-Rahman | Portfolio</title>
-  <script>
-  (function () {
-    try {
-      var saved = localStorage.getItem('theme');         // 'light' | 'dark' | null
-      var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      var theme = saved ? saved : (prefersDark ? 'dark' : 'light');
-      document.documentElement.setAttribute('data-theme', theme);
-    } catch (e) {}
-  })();
-</script>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -30,26 +20,28 @@
   </nav>
 
   <div class="page-wrapper">
-    <section class="hero">
-      <div class="hero-left">
+    <section class="hero hero-animated">
+      <!-- Decorative glowing blobs -->
+      <div class="hero-orb hero-orb-1"></div>
+      <div class="hero-orb hero-orb-2"></div>
+
+      <!-- LEFT SIDE -->
+      <div class="hero-left fade-in-left">
         <p class="hero-sub">Business Systems · Operations · Product Growth</p>
         <h1>Hi, I'm <span>M. Moin-Ur-Rahman</span></h1>
+
         <p class="hero-role">
           I work as a <span id="typed-role"></span>
         </p>
 
         <p class="hero-sub">
-          I bridge business requirements with technical solutions—designing APIs, supporting ERP & CBS operations,
-          and driving digital services across multiple countries.
+          I connect business requirements with technical execution—designing APIs, supporting ERP & CBS,
+          and helping digital products scale across multiple countries.
         </p>
 
         <div class="hero-buttons">
           <a href="experience.html" class="btn-primary">View Experience</a>
           <a href="projects.html" class="btn-ghost">Explore Projects</a>
-          <a href="CV of M.Moin-Ur-Rahman.pdf" class="btn-ghost" target="_blank"> Download CV  
-          </a>
-          <!-- Optional: replace # with your CV link on Google Drive -->
-          <!-- <a href="#" class="btn-ghost">Download CV</a> -->
         </div>
 
         <div class="hero-meta">
@@ -58,17 +50,44 @@
           <div class="hero-meta-item">Business & Engineering background</div>
         </div>
       </div>
-<img src="moinurrahman.jpg" alt="M. Moin-Ur-Rahman" class="profile-img" />
-      <div class="hero-right">
+
+      <!-- RIGHT SIDE -->
+      <div class="hero-right float-card fade-in-right">
+        <div class="hero-profile">
+          <!-- Optional: replace profile.jpg with your uploaded image file -->
+          <!-- <img src="moin-profile.jpg" alt="M. Moin-Ur-Rahman" class="profile-img"> -->
+          <div class="moinurrahman.jpg">MMR</div>
+          <div>
+            <p class="profile-name">M. Moin-Ur-Rahman</p>
+            <p class="profile-title">Business Systems & Operations Analyst</p>
+          </div>
+        </div>
+
         <p class="hero-tag">Snapshot</p>
         <p class="hero-title">What I bring to your team</p>
         <ul class="hero-list">
           <li>✔ Hands-on API integration & documentation</li>
-          <li>✔ ERP & Digital Field Application support (Ghana, Tanzania, Rwanda, Liberia, Kenya, Sierra Leone, Myanmar)</li>
-          <li>✔ Requirement analysis using SQL, JIRA, Postman & collaboration with dev/QA</li>
-          <li>✔ Experience in Agile, UAT, and production releases</li>
+          <li>✔ ERP & Digital Field Application support in 7+ countries</li>
+          <li>✔ Requirement analysis using SQL, JIRA & Postman</li>
+          <li>✔ Experience with Agile, UAT & production releases</li>
         </ul>
-        <div class="hero-badge">Open to opportunities</div>
+
+        <div class="hero-stats">
+          <div class="hero-stat-card">
+            <span class="hero-stat-number">3+</span>
+            <span class="hero-stat-label">Years in tech roles</span>
+          </div>
+          <div class="hero-stat-card">
+            <span class="hero-stat-number">7+</span>
+            <span class="hero-stat-label">Countries supported</span>
+          </div>
+          <div class="hero-stat-card">
+            <span class="hero-stat-number">Cross-</span>
+            <span class="hero-stat-label">functional collaboration</span>
+          </div>
+        </div>
+
+        <div class="hero-badge">Open to new opportunities</div>
       </div>
     </section>
   </div>
