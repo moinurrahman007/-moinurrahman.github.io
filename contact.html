@@ -4,12 +4,28 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact | M. Moin-Ur-Rahman</title>
+
+  <!-- (optional) theme preload script, if you added it on other pages -->
+  <!--
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('theme');
+        var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        var theme = saved ? saved : (prefersDark ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {}
+    })();
+  </script>
+  -->
+
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <nav>
     <div class="logo">M<span>MR</span></div>
     <div class="nav-toggle">☰</div>
+    <button class="theme-btn" id="theme-btn" type="button" aria-label="Toggle color theme" aria-pressed="false">🌙</button>
     <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
@@ -20,30 +36,64 @@
   </nav>
 
   <div class="page-wrapper">
-    <section class="section-card">
-      <h1 class="section-heading">Contact</h1>
-      <p class="section-sub">
-        If you’d like to discuss an opportunity, a project, or just say hello, you can reach me using the details below.
-      </p>
-    </section>
+    <section class="section-card contact-layout">
+      <!-- Left column -->
+      <div class="contact-column">
+        <h1 class="section-heading">Let’s Connect</h1>
+        <p class="section-sub">
+          Whether it’s a full-time role, a project, or a quick discussion about systems and operations,
+          I’m happy to hear from you.
+        </p>
 
-    <section class="contact-list section-card">
-      <p><strong>Email:</strong> <a href="mailto:moinarrahman.ece@gmail.com">moinarrahman.ece@gmail.com</a></p>
-      <p><strong>Phone (WhatsApp):</strong> <a href="tel:+8801777239671">+880-1777-239671</a></p>
-        <p><strong>LinkedIn:</strong>
-    <a href="https://www.linkedin.com/in/moin-ur-rahman-5ab8471aa/" target="_blank">
-      linkedin.com/in/YOUR-LINKEDIN-URL
-    </a>
-  </p>
+        <div class="contact-pill-row">
+          <span class="contact-pill">Open to Business Systems / BA roles</span>
+          <span class="contact-pill">Comfortable in multi-country environments</span>
+          <span class="contact-pill">Available for remote collaboration</span>
+        </div>
 
-  <p><strong>GitHub:</strong>
-    <a href="https://github.com/moinurrahman007" target="_blank">
-      github.com/moinurrahman007
-    </a>
-  </p>
-      <!-- Optional: replace # with your actual profile links -->
-      <!-- <p><strong>LinkedIn:</strong> <a href="#">linkedin.com/in/your-profile</a></p> -->
-      <!-- <p><strong>GitHub:</strong> <a href="#">github.com/your-username</a></p> -->
+        <div class="contact-note">
+          <p>
+            I usually respond within <strong>24–48 hours</strong> to professional messages and
+            interview requests.
+          </p>
+        </div>
+      </div>
+
+      <!-- Right column -->
+      <div class="contact-column contact-card">
+        <h2>Contact Details</h2>
+        <p class="section-sub" style="margin-bottom: 16px;">
+          Choose any of the channels below to reach me:
+        </p>
+
+        <div class="contact-item">
+          <span class="contact-label">Email</span>
+          <a href="mailto:moinarrahman.ece@gmail.com">moinarrahman.ece@gmail.com</a>
+        </div>
+
+        <div class="contact-item">
+          <span class="contact-label">Phone / WhatsApp</span>
+          <a href="tel:+8801777239671">+880&nbsp;1777&nbsp;239671</a>
+        </div>
+
+        <div class="contact-item">
+          <span class="contact-label">LinkedIn</span>
+          <a href="https://www.linkedin.com/in/YOUR-LINKEDIN-URL" target="_blank">
+            linkedin.com/in/YOUR-LINKEDIN-URL
+          </a>
+        </div>
+
+        <div class="contact-item">
+          <span class="contact-label">GitHub</span>
+          <a href="https://github.com/moinurrahman007" target="_blank">
+            github.com/moinurrahman007
+          </a>
+        </div>
+
+        <div class="contact-cta">
+          <p>If you’re a recruiter or hiring manager, feel free to share the role details and timeline.</p>
+        </div>
+      </div>
     </section>
   </div>
 
