@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | M. Moin-Ur-Rahman</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav>
+    <div class="logo">M<span>MR</span></div>
+    <div class="nav-toggle">☰</div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="experience.html">Experience</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-wrapper">
+    <section class="section-card">
+      <h1 class="section-heading">Contact</h1>
+      <p class="section-sub">
+        If you’d like to discuss an opportunity, a project, or just say hello, you can reach me using the details below.
+      </p>
+    </section>
+
+    <section class="contact-list section-card">
+      <p><strong>Email:</strong> <a href="mailto:moinarrahman.ece@gmail.com">moinarrahman.ece@gmail.com</a></p>
+      <p><strong>Phone (WhatsApp):</strong> <a href="tel:+8801777239671">+880-1777-239671</a></p>
+      <!-- Optional: replace # with your actual profile links -->
+      <!-- <p><strong>LinkedIn:</strong> <a href="#">linkedin.com/in/your-profile</a></p> -->
+      <!-- <p><strong>GitHub:</strong> <a href="#">github.com/your-username</a></p> -->
+    </section>
+  </div>
+
+  <footer>
+    © <span id="year"></span> M. Moin-Ur-Rahman
+  </footer>
+
+  <script src="main.js"></script>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
