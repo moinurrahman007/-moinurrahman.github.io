@@ -57,3 +57,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
   setupNavToggle();
 });
+// ===== 3D Tilt Card Effect =====
+const tiltCard = document.getElementById("tilt-card");
+
+if (tiltCard) {
+  tiltCard.addEventListener("mousemove", (e) => {
+    const rect = tiltCard.getBoundingClientRect();
+    const x = e.clientX - rect.left - rect.width / 2;
+    const y = e.clientY - rect.top - rect.height / 2;
+
+    const rotateX = -(y / 20);
+    const rotateY = x / 20;
+
+    tiltCard.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+  });
+
+  tiltCard.addEventListener("mouseleave", () => {
+    tiltCard.style.transform = "rotateX(0deg) rotateY(0deg)";
+  });
+}
