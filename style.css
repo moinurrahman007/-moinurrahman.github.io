@@ -551,4 +551,160 @@ footer {
     grid-template-columns: 1fr;
   }
 }
+/* ===== Animated hero & extras ===== */
 
+/* animated gradient background */
+body {
+  background: radial-gradient(circle at top, #111827 0, #020617 50%, #000 100%);
+  background-size: 180% 180%;
+  animation: gradientShift 18s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 0%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 100%; }
+}
+
+/* put hero elements above blobs */
+.hero-animated {
+  position: relative;
+  overflow: hidden;
+}
+
+/* glowing blobs */
+.hero-orb {
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(36px);
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+.hero-orb-1 {
+  width: 260px;
+  height: 260px;
+  background: #4f46e5;
+  top: -40px;
+  left: -60px;
+  animation: orbFloat 18s ease-in-out infinite alternate;
+}
+
+.hero-orb-2 {
+  width: 220px;
+  height: 220px;
+  background: #ec4899;
+  bottom: -80px;
+  right: -40px;
+  animation: orbFloat 20s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes orbFloat {
+  0%   { transform: translate3d(0, 0, 0); }
+  50%  { transform: translate3d(20px, -20px, 0); }
+  100% { transform: translate3d(-10px, 10px, 0); }
+}
+
+/* subtle floating for right card */
+.float-card {
+  animation: floatCard 6s ease-in-out infinite;
+}
+
+@keyframes floatCard {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+/* simple fade-in animations */
+.fade-in-left {
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: fadeLeft 0.8s ease-out forwards;
+}
+
+.fade-in-right {
+  opacity: 0;
+  transform: translateX(20px);
+  animation: fadeRight 0.8s ease-out forwards;
+  animation-delay: 0.15s;
+}
+
+@keyframes fadeLeft {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeRight {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* profile block on hero card */
+.hero-profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.profile-initials {
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.95rem;
+  background: radial-gradient(circle at top, #4f46e5, #0f172a);
+  border: 1px solid rgba(148, 163, 184, 0.6);
+  color: #e5e7eb;
+}
+
+.profile-name {
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.profile-title {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* stats row on hero card */
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  margin-top: 14px;
+  font-size: 0.8rem;
+}
+
+.hero-stat-card {
+  padding: 8px 10px;
+  border-radius: 12px;
+  background: rgba(15, 23, 42, 0.85);
+  border: 1px solid rgba(148,163,184,0.35);
+}
+
+.hero-stat-number {
+  display: block;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.hero-stat-label {
+  display: block;
+  color: var(--text-muted);
+}
+
+/* make sure stats look OK on mobile */
+@media (max-width: 600px) {
+  .hero-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
