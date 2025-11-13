@@ -194,3 +194,39 @@ footer{ padding: 16px 7vw 30px; font-size:0.85rem; color: var(--text-muted); tex
 @media (max-width: 720px){
   .contact-layout{ grid-template-columns: 1fr; }
 }
+/* ===== Global card hover animation (all pages) ===== */
+.section-card,
+.item-card,
+.project-card,
+.contact-card {
+  transition:
+    transform 0.22s ease,
+    box-shadow 0.22s ease,
+    border-color 0.22s ease,
+    background 0.22s ease;
+}
+
+.section-card:hover,
+.item-card:hover,
+.project-card:hover,
+.contact-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 26px 40px rgba(15, 23, 42, 0.65);
+  border-color: rgba(129, 140, 248, 0.85); /* soft accent */
+  background: radial-gradient(circle at top left,
+              rgba(109,106,255,0.15),
+              rgba(15, 23, 42, 0.96));
+}
+/* ===== Scroll reveal animation (all pages) ===== */
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+}
+
+.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition:
+    opacity 0.6s ease-out,
+    transform 0.6s ease-out;
+}
