@@ -2,30 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact | M. Moin-Ur-Rahman</title>
-
-  <!-- (optional) theme preload script, if you added it on other pages -->
-  <!--
-  <script>
-    (function () {
-      try {
-        var saved = localStorage.getItem('theme');
-        var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        var theme = saved ? saved : (prefersDark ? 'dark' : 'light');
-        document.documentElement.setAttribute('data-theme', theme);
-      } catch (e) {}
-    })();
-  </script>
-  -->
-
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact | M. Moin‑Ur‑Rahman</title>
+  <meta name="description" content="Contact M. Moin‑Ur‑Rahman for roles, projects, or collaboration." />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
+
   <nav>
     <div class="logo">M<span>R</span></div>
-    <div class="nav-toggle">☰</div>
-    <button class="theme-btn" id="theme-btn" type="button" aria-label="Toggle color theme" aria-pressed="false">🌙</button>
+    <button class="nav-toggle" aria-label="Open menu">☰</button>
     <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
@@ -35,36 +22,31 @@
     </ul>
   </nav>
 
-  <div class="page-wrapper">
+  <main class="page-wrapper">
     <section class="section-card contact-layout">
       <!-- Left column -->
-      <div class="contact-column">
+      <div class="contact-column fade-in-left">
         <h1 class="section-heading">Let’s Connect</h1>
         <p class="section-sub">
-          Whether it’s a full-time role, a project, or a quick discussion about systems and operations,
+          Whether it’s a full‑time role, a project, or a quick discussion about systems and operations,
           I’m happy to hear from you.
         </p>
 
         <div class="contact-pill-row">
           <span class="contact-pill">Open to Business Systems / BA roles</span>
-          <span class="contact-pill">Comfortable in multi-country environments</span>
+          <span class="contact-pill">Comfortable in multi‑country environments</span>
           <span class="contact-pill">Available for remote collaboration</span>
         </div>
 
         <div class="contact-note">
-          <p>
-            I usually respond within <strong>24–48 hours</strong> to professional messages and
-            interview requests.
-          </p>
+          <p>I usually respond within <strong>24–48 hours</strong> to professional messages and interview requests.</p>
         </div>
       </div>
 
       <!-- Right column -->
-      <div class="contact-column contact-card">
+      <div class="contact-column contact-card fade-in-right">
         <h2>Contact Details</h2>
-        <p class="section-sub" style="margin-bottom: 16px;">
-          Choose any of the channels below to reach me:
-        </p>
+        <p class="section-sub" style="margin-bottom: 16px;">Choose any channel below:</p>
 
         <div class="contact-item">
           <span class="contact-label">Email</span>
@@ -78,32 +60,28 @@
 
         <div class="contact-item">
           <span class="contact-label">LinkedIn</span>
-          <a href="https://www.linkedin.com/in/moin-ur-rahman-5ab8471aa/" target="_blank">
-            linkedin.com/in/YOUR-LINKEDIN-URL
-          </a>
+          <a href="https://www.linkedin.com/in/moin-ur-rahman-5ab8471aa/" target="_blank">linkedin.com/in/YOUR-LINKEDIN-URL</a>
         </div>
 
         <div class="contact-item">
           <span class="contact-label">GitHub</span>
-          <a href="https://github.com/moinurrahman007" target="_blank">
-            github.com/moinurrahman007
-          </a>
+          <a href="https://github.com/moinurrahman007" target="_blank">github.com/moinurrahman007</a>
         </div>
 
-        <div class="contact-cta">
-          <p>If you’re a recruiter or hiring manager, feel free to share the role details and timeline.</p>
-        </div>
+        <!-- Optional: Add your CV (upload PDF to repo, then link it) -->
+        <div class="contact-item">
+          <span class="contact-label">CV / Resume</span>
+          <a href="CV of M.Moin-Ur-Rahman.pdf" target="_blank">Download PDF</a>
+        </div> 
       </div>
     </section>
-  </div>
+  </main>
 
   <footer>
-    © <span id="year"></span> M. Moin-Ur-Rahman
+    © <span id="year"></span> M. Moin‑Ur‑Rahman
   </footer>
 
   <script src="main.js"></script>
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>
+
