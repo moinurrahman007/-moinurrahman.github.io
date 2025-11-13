@@ -2,14 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About | M. Moin-Ur-Rahman</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About | M. Moin‑Ur‑Rahman</title>
+  <meta name="description" content="About M. Moin‑Ur‑Rahman: Business Systems Analyst with experience in API integration, ERP support, and product growth." />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
+
   <nav>
     <div class="logo">M<span>R</span></div>
-    <div class="nav-toggle">☰</div>
+    <button class="nav-toggle" aria-label="Open menu">☰</button>
     <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html" class="active">About</a></li>
@@ -19,18 +22,13 @@
     </ul>
   </nav>
 
-  <div class="page-wrapper">
-    <section class="section-card">
+  <main class="page-wrapper">
+    <section class="section-card fade-in-left">
       <h1 class="section-heading">About Me</h1>
       <p class="section-sub">
-        I am a Business Systems Analyst with a background in Electronics & Communications Engineering.
-        I have experience across business analysis, engineering operations, and product growth roles in
-        fast-moving technology environments.
-      </p>
-      <p class="section-sub" style="margin-top: 10px;">
-        My work focuses on translating complex business requirements into clear, implementable technical
-        solutions. I enjoy collaborating with cross-functional teams, improving processes, and building
-        systems that scale across countries and users.
+        I’m a Business Systems Analyst with a background in Electronics & Communications Engineering.
+        I translate complex business requirements into clear, implementable technical solutions and enjoy
+        improving processes for scale and reliability.
       </p>
 
       <div class="tag-row" style="margin-top: 16px;">
@@ -43,26 +41,23 @@
       </div>
     </section>
 
-    <section class="section-card">
+    <section class="section-card fade-in-right">
       <h2 class="section-heading">Interests</h2>
-      <p class="section-sub">A few areas that I actively explore and enjoy working on:</p>
+      <p class="section-sub">Areas I actively explore and enjoy working on:</p>
       <ul class="item-body" style="margin-top: 8px;">
         <li>Designing and improving business processes for digital products</li>
-        <li>Working with APIs and data to support decision-making</li>
+        <li>Working with APIs and data to support decisions</li>
         <li>Using diagrams, flows, and documentation to align teams</li>
-        <li>Learning more about AI-driven automation in operations</li>
+        <li>Learning more about AI‑driven automation in operations</li>
         <li>Creative work in photography, media, and storytelling</li>
       </ul>
     </section>
-  </div>
+  </main>
 
   <footer>
-    © <span id="year"></span> M. Moin-Ur-Rahman
+    © <span id="year"></span> M. Moin‑Ur‑Rahman
   </footer>
 
   <script src="main.js"></script>
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>
