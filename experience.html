@@ -2,14 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Experience | M. Moin-Ur-Rahman</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Experience | M. Moin‑Ur‑Rahman</title>
+  <meta name="description" content="Professional experience of M. Moin‑Ur‑Rahman in business systems analysis, engineering operations, and product growth." />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
+
   <nav>
     <div class="logo">M<span>R</span></div>
-    <div class="nav-toggle">☰</div>
+    <button class="nav-toggle" aria-label="Open menu">☰</button>
     <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
@@ -19,16 +22,14 @@
     </ul>
   </nav>
 
-  <div class="page-wrapper">
+  <main class="page-wrapper">
     <section class="section-card">
       <h1 class="section-heading">Professional Experience</h1>
-      <p class="section-sub">
-        A brief overview of my roles in technology, digital operations, and business analysis.
-      </p>
+      <p class="section-sub">An overview of roles across technology, operations, and analysis.</p>
     </section>
 
     <section class="timeline">
-      <article class="item-card">
+      <article class="item-card fade-in-left">
         <div class="item-header">
           <div>
             <div class="item-role">Business Systems Analyst</div>
@@ -41,15 +42,15 @@
         </div>
         <div class="item-body">
           <ul>
-            <li>Lead API integrations by translating business needs into technical requirements.</li>
-            <li>Conduct requirement analysis, scope definition, and impact assessments to align with business goals.</li>
-            <li>Use SQL and data analysis to validate requirements and support decision-making.</li>
-            <li>Create and maintain API documentation and integration specifications for dev and QA teams.</li>
+            <li>Lead API integrations and author technical documentation.</li>
+            <li>Conduct requirement analysis, scope definition, and impact assessments.</li>
+            <li>Use SQL and data analysis to validate requirements and support decisions.</li>
+            <li>Enable cross‑team collaboration between business, development, and QA.</li>
           </ul>
         </div>
       </article>
 
-      <article class="item-card">
+      <article class="item-card fade-in-right">
         <div class="item-header">
           <div>
             <div class="item-role">Engineering Operations Analyst (Digital Service Operations)</div>
@@ -57,21 +58,20 @@
           </div>
           <div>
             <div class="item-period">Nov 2022 – May 2025</div>
-            <div class="item-location">Dhaka, Bangladesh · Multi-country</div>
+            <div class="item-location">Dhaka · Multi‑country</div>
           </div>
         </div>
         <div class="item-body">
           <ul>
-            <li>Oversaw sbiCloud ERP and Digital Field Application L1 support for BRAC International across
-                Ghana, Tanzania, Liberia, Rwanda, Kenya, Sierra Leone, and Myanmar.</li>
-            <li>Resolved service requests using JIRA and Manage Engine, coordinating with L2/DevOps/Infra teams where needed.</li>
-            <li>Coordinated deployments, performed UAT and post-release validation for hotfixes and changes.</li>
-            <li>Produced SOPs, FAQs, and reporting to strengthen governance and operational knowledge sharing.</li>
+            <li>Oversaw sbiCloud ERP & Digital Field Application L1 support across 7+ countries.</li>
+            <li>Resolved requests via JIRA/Manage Engine, coordinating with L2/DevOps/Infra.</li>
+            <li>Coordinated deployments, UAT, and post‑release validation of hotfixes/changes.</li>
+            <li>Produced SOPs, FAQs, and reports to strengthen operational governance.</li>
           </ul>
         </div>
       </article>
 
-      <article class="item-card">
+      <article class="item-card fade-in-left">
         <div class="item-header">
           <div>
             <div class="item-role">Business Analyst (Product Growth)</div>
@@ -79,36 +79,34 @@
           </div>
           <div>
             <div class="item-period">Sep 2021 – Nov 2022</div>
-            <div class="item-location">Remote / Cross-functional</div>
+            <div class="item-location">Remote / Cross‑functional</div>
           </div>
         </div>
         <div class="item-body">
           <ul>
-            <li>Led requirement elicitation and documentation (BRS, SRS) for product and growth initiatives.</li>
+            <li>Led requirement elicitation and documentation (BRS, SRS).</li>
             <li>Designed process flows and UI mockups using BPMN, XMind, and Figma.</li>
-            <li>Supported SDLC and Agile ceremonies including sprint planning, UAT, and retrospectives.</li>
-            <li>Performed basic testing and API validation to support QA and releases.</li>
+            <li>Supported Agile ceremonies including sprint planning, UAT, and retrospectives.</li>
+            <li>Performed API validation and basic testing to support QA and releases.</li>
           </ul>
         </div>
       </article>
     </section>
 
-    <section class="section-card">
+    <section class="section-card fade-in-right">
       <h2 class="section-heading">Education</h2>
       <div class="item-body">
-        <p><strong>B.Sc. in Electronics & Communications Engineering</strong> – East West University</p>
-        <p>HSC – Government A.H. College · SSC – Armed Police Battalion Public School & College</p>
+        <p><strong>B.Sc. in Electronics & Communications Engineering</strong> — East West University</p>
+        <p>HSC — Government A.H. College · SSC — Armed Police Battalion Public School & College</p>
       </div>
     </section>
-  </div>
+  </main>
 
   <footer>
-    © <span id="year"></span> M. Moin-Ur-Rahman
+    © <span id="year"></span> M. Moin‑Ur‑Rahman
   </footer>
 
   <script src="main.js"></script>
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>
+
