@@ -2,14 +2,18 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>M. Moin-Ur-Rahman | Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>M. Moin‑Ur‑Rahman | Portfolio</title>
+  <meta name="description" content="Business Systems & Operations Analyst portfolio of M. Moin‑Ur‑Rahman: experience, projects, and contact." />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <!-- 3D particles canvas (global) -->
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
+
   <nav>
     <div class="logo">M<span>R</span></div>
-    <div class="nav-toggle">☰</div>
+    <button class="nav-toggle" aria-label="Open menu">☰</button>
     <ul>
       <li><a href="index.html" class="active">Home</a></li>
       <li><a href="about.html">About</a></li>
@@ -19,23 +23,18 @@
     </ul>
   </nav>
 
-  <div class="page-wrapper">
+  <main class="page-wrapper">
     <section class="hero hero-animated">
-      <!-- Decorative glowing blobs -->
-      <div class="hero-orb hero-orb-1"></div>
-      <div class="hero-orb hero-orb-2"></div>
-
-      <!-- LEFT SIDE -->
       <div class="hero-left fade-in-left">
-        <p class="hero-sub">Business Systems · Operations · Product Growth</p>
-        <h1>Hi, I'm <span>M. Moin-Ur-Rahman</span></h1>
+        <p class="hero-sub">Business Systems · sbiCloud/T24 CBS · Fintech Operations · DFS/MFS/DFA · Product Growth</p>
+        <h1>Hi, I’m <span>M. Moin‑Ur‑Rahman</span></h1>
 
         <p class="hero-role">
-          I work as a <span id="typed-role"></span>
+          I have work experience as a <span id="typed-role"></span>
         </p>
 
         <p class="hero-sub">
-          I connect business requirements with technical execution—designing APIs, supporting ERP & CBS,
+          I connect business requirements with technical execution — designing APIs, supporting ERP & CBS,
           and helping digital products scale across multiple countries.
         </p>
 
@@ -46,19 +45,18 @@
 
         <div class="hero-meta">
           <div class="hero-meta-item">BRAC IT Services Ltd</div>
-          <div class="hero-meta-item">Multi-country digital operations</div>
+          <div class="hero-meta-item">Multi‑country operations</div>
           <div class="hero-meta-item">Business & Engineering background</div>
         </div>
       </div>
 
-      <!-- RIGHT SIDE -->
-      <div class="hero-right float-card fade-in-right tilt-card" id="tilt-card">
+      <div class="hero-right float-card fade-in-right">
         <div class="hero-profile">
-          <!-- Optional: replace profile.jpg with your uploaded image file -->
-          <!-- <img src="moin-profile.jpg" alt="M. Moin-Ur-Rahman" class="profile-img"> -->
-          <div class="moinurrahman.jpg">MR</div>
+          <!-- Optional: upload moin-profile.jpg and uncomment the next line -->
+          <!-- <img src="moin-profile.jpg" alt="M. Moin‑Ur‑Rahman" class="profile-img"> -->
+          <div class="profile-initials">MR</div>
           <div>
-            <p class="profile-name">M. Moin-Ur-Rahman</p>
+            <p class="profile-name">M. Moin‑Ur‑Rahman</p>
             <p class="profile-title">Business Systems & Operations Analyst</p>
           </div>
         </div>
@@ -66,10 +64,10 @@
         <p class="hero-tag">Snapshot</p>
         <p class="hero-title">What I bring to your team</p>
         <ul class="hero-list">
-          <li>✔ Hands-on API integration & documentation</li>
+          <li>✔ Hands‑on API integration & documentation</li>
           <li>✔ ERP & Digital Field Application support in 7+ countries</li>
-          <li>✔ Requirement analysis using SQL, JIRA & Postman</li>
-          <li>✔ Experience with Agile, UAT & production releases</li>
+          <li>✔ Requirement analysis with SQL, JIRA & Postman</li>
+          <li>✔ Agile collaboration across business, dev & QA</li>
         </ul>
 
         <div class="hero-stats">
@@ -82,23 +80,20 @@
             <span class="hero-stat-label">Countries supported</span>
           </div>
           <div class="hero-stat-card">
-            <span class="hero-stat-number">Cross-</span>
-            <span class="hero-stat-label">functional collaboration</span>
+            <span class="hero-stat-number">API</span>
+            <span class="hero-stat-label">Integration focus</span>
           </div>
         </div>
 
         <div class="hero-badge">Open to new opportunities</div>
       </div>
     </section>
-  </div>
+  </main>
 
   <footer>
-    © <span id="year"></span> M. Moin-Ur-Rahman · Built with GitHub Pages
+    © <span id="year"></span> M. Moin‑Ur‑Rahman · Built with GitHub Pages
   </footer>
 
   <script src="main.js"></script>
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>
