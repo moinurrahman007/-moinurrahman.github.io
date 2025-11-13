@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>M. Moin-Ur-Rahman | Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav>
+    <div class="logo">M<span>MR</span></div>
+    <div class="nav-toggle">☰</div>
+    <ul>
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="experience.html">Experience</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-wrapper">
+    <section class="hero">
+      <div class="hero-left">
+        <p class="hero-sub">Business Systems · Operations · Product Growth</p>
+        <h1>Hi, I'm <span>M. Moin-Ur-Rahman</span></h1>
+        <p class="hero-role">
+          I work as a <span id="typed-role"></span>
+        </p>
+
+        <p class="hero-sub">
+          I bridge business requirements with technical solutions—designing APIs, supporting ERP & CBS operations,
+          and driving digital services across multiple countries.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="experience.html" class="btn-primary">View Experience</a>
+          <a href="projects.html" class="btn-ghost">Explore Projects</a>
+          <!-- Optional: replace # with your CV link on Google Drive -->
+          <!-- <a href="#" class="btn-ghost">Download CV</a> -->
+        </div>
+
+        <div class="hero-meta">
+          <div class="hero-meta-item">BRAC IT Services Ltd</div>
+          <div class="hero-meta-item">Multi-country digital operations</div>
+          <div class="hero-meta-item">Business & Engineering background</div>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <p class="hero-tag">Snapshot</p>
+        <p class="hero-title">What I bring to your team</p>
+        <ul class="hero-list">
+          <li>✔ Hands-on API integration & documentation</li>
+          <li>✔ ERP & Digital Field Application support (Ghana, Tanzania, Rwanda, Liberia, Kenya, Sierra Leone, Myanmar)</li>
+          <li>✔ Requirement analysis using SQL, JIRA, Postman & collaboration with dev/QA</li>
+          <li>✔ Experience in Agile, UAT, and production releases</li>
+        </ul>
+        <div class="hero-badge">Open to opportunities</div>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    © <span id="year"></span> M. Moin-Ur-Rahman · Built with GitHub Pages
+  </footer>
+
+  <script src="main.js"></script>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
