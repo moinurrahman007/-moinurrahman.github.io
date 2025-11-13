@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects | M. Moin-Ur-Rahman</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav>
+    <div class="logo">M<span>MR</span></div>
+    <div class="nav-toggle">☰</div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="experience.html">Experience</a></li>
+      <li><a href="projects.html" class="active">Projects</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-wrapper">
+    <section class="section-card">
+      <h1 class="section-heading">Selected Projects</h1>
+      <p class="section-sub">
+        A few representative projects that reflect my interest in systems, data, and creative work.
+      </p>
+    </section>
+
+    <section class="project-grid">
+      <article class="project-card">
+        <h2 class="project-title">BRAC Data Service Portal</h2>
+        <p class="project-meta">Role: Solution Designer & Business Analyst</p>
+        <p class="project-desc">
+          Designed a portal to separate data tickets from service tickets, reducing data inconsistencies and
+          improving operational support for internal stakeholders. The solution targeted recurring human-generated
+          errors and raised visibility on data-related issues.
+        </p>
+        <div class="tag-row">
+          <span class="tag">Business Analysis</span>
+          <span class="tag">Process Design</span>
+          <span class="tag">Ticketing</span>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <h2 class="project-title">AI-Based Automated Traffic Control System</h2>
+        <p class="project-meta">Academic Project · Traffic & Smart Cities</p>
+        <p class="project-desc">
+          Developed an AI-based traffic control system tailored to the challenges of Bangladesh’s urban roads,
+          with the aim of prioritizing congested lanes in real time. Focused on adapting smart-city concepts
+          to local infrastructure constraints.
+        </p>
+        <div class="tag-row">
+          <span class="tag">Artificial Intelligence</span>
+          <span class="tag">Smart Traffic</span>
+          <span class="tag">Simulation</span>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <h2 class="project-title">Creative Direction – Bangladesh Films & Media</h2>
+        <p class="project-meta">Director of Photography & Assistant Director</p>
+        <p class="project-desc">
+          Contributed to screenplay direction, script writing, and cinematography. Supported production teams
+          in delivering visually compelling and story-driven media projects, combining technical precision with
+          creative vision.
+        </p>
+        <div class="tag-row">
+          <span class="tag">Photography</span>
+          <span class="tag">Cinematography</span>
+          <span class="tag">Storytelling</span>
+        </div>
+      </article>
+    </section>
+  </div>
+
+  <footer>
+    © <span id="year"></span> M. Moin-Ur-Rahman
+  </footer>
+
+  <script src="main.js"></script>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
