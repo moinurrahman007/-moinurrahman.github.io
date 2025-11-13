@@ -404,6 +404,15 @@ footer {
 }
 
 /* ===== Responsive ===== */
+.profile-img {
+  width: 140px;
+  height: 140px;
+  border-radius: 999px;
+  object-fit: cover;
+  border: 2px solid rgba(148, 163, 184, 0.7);
+  box-shadow: var(--shadow-soft);
+  margin-bottom: 16px;
+}
 @media (max-width: 900px) {
   .hero {
     grid-template-columns: 1fr;
